@@ -26,7 +26,7 @@ def resumir_texto(texto):
         return str(e)
 
 
-@app.route('/resumir', methods=['GET'])
+@app.route('/resumir', methods=['POST'])
 def gerar_resumo():
     video_id = request.args.get('url')
     if not video_id:
