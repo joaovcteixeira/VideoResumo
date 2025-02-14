@@ -28,7 +28,7 @@ def resumir_texto(texto):
 
 @app.route('/resumir', methods=['POST'])
 def gerar_resumo():
-    video_id = request.get_json('url')
+    video_id = request.get_json()
     if not video_id:
         return jsonify({'erro': 'Nenhuma URL fornecida'}), 400
 
@@ -40,4 +40,4 @@ def gerar_resumo():
     return jsonify({'resumo': resumo})
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=10000)
