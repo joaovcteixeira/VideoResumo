@@ -1,14 +1,15 @@
 from flask import Flask, request, jsonify
 import google.generativeai as genai
 from youtube_transcript_api import YouTubeTranscriptApi
+import os
 
 app = Flask(__name__)
 
 genai.configure(api_key='AIzaSyCDRcqRw2YmRbixhM_v-I8B3AIGniqf24Y')
 
 def extrair_transcricao(video_url):
-    video_id = video_url.split('v=')[-1]
     try:
+        video_id = video_url.split('v=')[-1]
         transcricao = YouTubeTranscriptApi.get_transcript(video_id,languages=['pt'])
         texto = ' '.join([item['text']for item in transcricao])
         return texto
@@ -28,17 +29,31 @@ def resumir_texto(texto):
 
 @app.route('/resumir', methods=['POST'])
 def gerar_resumo():
-    video_url = request.json.get('link','')
-    if not video_url:
-        return jsonify({'erro': 'Nenhuma URL fornecida'}), 400
-    video_id = video_url.split('v=')[-1]
+    try:
+        video_url = request.json.get('link', '')
 
-    transcricao = extrair_transcricao(video_id)
-    if 'error' in transcricao.lower():
-        return jsonify({'erro': 'Erro ao obter transcrição'}), 500
+        if not video_url:
+            return jsonify({'erro': 'Nenhuma URL fornecida'}), 400
 
-    resumo = resumir_texto(transcricao)
-    return jsonify({'resumo': resumo})
+        if 'youtube.com/watch?v=' in video_url:
+            video_id = video_url.split('v=')[-1].split('&')[0]
+        elif 'youtu.be/' in video_url:
+            video_id = video_url.split('youtu.be/')[-1].split('?')[0]
+        else:
+            return jsonify({'erro': 'URL inválida'}), 400
+
+        transcricao = extrair_transcricao(video_id)
+        if not transcricao:
+            return jsonify({'erro': 'Erro ao obter transcricao'}), 500
+
+        resumo = gerar_resumo(transcricao)
+        if not resumo:
+            return jsonify({'erro': 'Erro ao gerar resumo'}), 500
+
+        return jsonify({'resumo': resumo})
+
+    except Exception as e:
+        return jsonify({'erro': f'Erro interno {str(e)}'}), 500
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=10000)
