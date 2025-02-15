@@ -46,7 +46,7 @@ def gerar_resumo():
         if not transcricao:
             return jsonify({'erro': 'Erro ao obter transcricao'}), 500
 
-        resumo = gerar_resumo(transcricao)
+        resumo = resumir_texto(transcricao)
         if not resumo:
             return jsonify({'erro': 'Erro ao gerar resumo'}), 500
 
