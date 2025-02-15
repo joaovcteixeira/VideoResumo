@@ -28,9 +28,10 @@ def resumir_texto(texto):
 
 @app.route('/resumir', methods=['POST'])
 def gerar_resumo():
-    video_id = request.get_json()
-    if not video_id:
+    video_url = request.json.get('link','')
+    if not video_url:
         return jsonify({'erro': 'Nenhuma URL fornecida'}), 400
+    video_id = video_url.split('v=')[-1]
 
     transcricao = extrair_transcricao(video_id)
     if 'error' in transcricao.lower():
