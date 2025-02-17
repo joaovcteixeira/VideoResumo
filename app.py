@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 import google.generativeai as genai
 from youtube_transcript_api import YouTubeTranscriptApi
 import os
+import requests
 
 app = Flask(__name__)
 
@@ -59,7 +60,7 @@ def gerar_resumo():
 def teste_youtube():
     url = 'https://www.youtube.com/watch?v=FDVTxKRRENo'
     try:
-        resposta = requests.get(erl)
+        resposta = requests.get(url)
         return jsonify({'status_code': resposta.status_code})
     except Exception as e:
         return jsonify({'erro': str(e)})
