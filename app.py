@@ -55,5 +55,14 @@ def gerar_resumo():
     except Exception as e:
         return jsonify({'erro': f'Erro interno {str(e)}'}), 500
 
+@app.route('/teste', methods=['GET'])
+def teste_youtube():
+    url = 'https://www.youtube.com/watch?v=FDVTxKRRENo'
+    try:
+        resposta = requests.get(erl)
+        return jsonify({'status_code': resposta.status_code})
+    except Exception as e:
+        return jsonify({'erro': str(e)})
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=10000)
