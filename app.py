@@ -4,7 +4,7 @@ import os
 import google.generativeai as genai
 
 # Configurar a chave da API Gemini
-API_KEY = "SUA_CHAVE_GEMINI_AQUI"
+API_KEY = "AIzaSyCDRcqRw2YmRbixhM_v-I8B3AIGniqf24Y"
 genai.configure(api_key=API_KEY)
 
 app = Flask(__name__)
