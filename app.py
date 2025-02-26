@@ -1,37 +1,65 @@
 from flask import Flask, request, jsonify
-import google.generativeai as genai
-from youtube_transcript_api import YouTubeTranscriptApi
+import yt_dlp
 import os
-import requests
+import google.generativeai as genai
+
+# Configurar a chave da API Gemini
+API_KEY = "SUA_CHAVE_GEMINI_AQUI"
+genai.configure(api_key=API_KEY)
 
 app = Flask(__name__)
 
-genai.configure(api_key='AIzaSyCDRcqRw2YmRbixhM_v-I8B3AIGniqf24Y')
 
-def extrair_transcricao(video_url):
-    try:
-        video_id = video_url.split('v=')[-1]
-        transcricao = YouTubeTranscriptApi.get_transcript(video_id,languages=['pt'])
-        texto = ' '.join([item['text']for item in transcricao])
-        return texto
-    except Exception as e:
-        return str(e)
+def baixar_legendas(video_id):
+    """Baixa legendas automáticas do YouTube usando yt_dlp"""
+    ydl_opts = {
+        'skip_download': True,  # Não baixa o vídeo, apenas as legendas
+        'writesubtitles': True,  # Baixa legendas
+        'subtitleslangs': ['pt', 'en'],  # Tenta primeiro PT, depois EN
+        'outtmpl': f"{video_id}.vtt",  # Nome do arquivo de legendas
+        'quiet': True
+    }
 
-def resumir_texto(texto):
+    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+        try:
+            ydl.download([f"https://www.youtube.com/watch?v={video_id}"])
+            return f"{video_id}.vtt"
+        except Exception:
+            return None
+
+
+def ler_legendas(arquivo):
+    """Lê legendas do arquivo .vtt"""
+    if not os.path.exists(arquivo):
+        return None
+
+    with open(arquivo, 'r', encoding='utf-8') as f:
+        linhas = f.readlines()
+
+    texto_limpo = []
+    for linha in linhas:
+        if "-->" not in linha and linha.strip() and not linha.strip().isdigit():
+            texto_limpo.append(linha.strip())
+
+    return " ".join(texto_limpo)
+
+
+def gerar_resumo(texto):
+    """Usa a API Gemini para resumir as legendas"""
     try:
-        modelo = genai.GenerativeModel('gemini-pro')
-        prompt = ('Resuma o seguinte texto detalhadamente em um formato bem estruturado, '
-        'com parágrafos claros e separados (não precisa informar o número do parágrafo): \n\n'+texto)
-        resposta = modelo.generate_content(prompt)
+        modelo = genai.GenerativeModel("gemini-pro")
+        resposta = modelo.generate_content(f"Resuma o seguinte texto detalhadamente em um formato bem estruturado, com parágrafos claros e separados (não precisa informar o número do parágrafo): \n\n{texto}")
         return resposta.text
-    except Exception as e:
-        return str(e)
+    except Exception:
+        return "Erro ao gerar resumo com IA."
 
 
 @app.route('/resumir', methods=['POST'])
-def gerar_resumo():
+def resumir():
+    """Recebe um link do usuário, extrai legendas e gera resumo"""
     try:
-        video_url = request.json.get('link', '')
+        data = request.get_json()
+        video_url = data.get('link', '')
 
         if not video_url:
             return jsonify({'erro': 'Nenhuma URL fornecida'}), 400
@@ -43,27 +71,24 @@ def gerar_resumo():
         else:
             return jsonify({'erro': 'URL inválida'}), 400
 
-        transcricao = extrair_transcricao(video_id)
-        if not transcricao:
-            return jsonify({'erro': 'Erro ao obter transcricao'}), 500
+        # Baixar legendas
+        arquivo_legenda = baixar_legendas(video_id)
+        if not arquivo_legenda:
+            return jsonify({'erro': 'Este vídeo não possui legendas disponíveis'}), 500
 
-        resumo = resumir_texto(transcricao)
-        if not resumo:
-            return jsonify({'erro': 'Erro ao gerar resumo'}), 500
+        # Ler legendas
+        transcricao = ler_legendas(arquivo_legenda)
+        if not transcricao:
+            return jsonify({'erro': 'Erro ao processar legendas'}), 500
+
+        # Gerar resumo com IA
+        resumo = gerar_resumo(transcricao)
 
         return jsonify({'resumo': resumo})
 
     except Exception as e:
-        return jsonify({'erro': f'Erro interno {str(e)}'}), 500
+        return jsonify({'erro': f'Erro interno: {str(e)}'}), 500
 
-@app.route('/teste', methods=['GET'])
-def teste_youtube():
-    url = 'https://www.youtube.com/watch?v=FDVTxKRRENo'
-    try:
-        resposta = requests.get(url)
-        return jsonify({'status_code': resposta.status_code})
-    except Exception as e:
-        return jsonify({'erro': str(e)})
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5001)
