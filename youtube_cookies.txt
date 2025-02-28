@@ -1,223 +1,25 @@
-[
-    {
-        "domain": ".youtube.com",
-        "expirationDate": 1775104068.9261,
-        "hostOnly": false,
-        "httpOnly": true,
-        "name": "__Secure-3PSID",
-        "path": "/",
-        "sameSite": "no_restriction",
-        "secure": true,
-        "session": false,
-        "storeId": null,
-        "value": "g.a000uAgN5o8deURjLzo9TKbufOfmSx5gTkZmqS6jKNWUMcXzQz4ARO9V2ZMWoHaq8AiiEdX1xAACgYKAcoSARMSFQHGX2MiY3NF_-6lTGfV3PiTbVhYtxoVAUF8yKq9EVf4zu3YVpXMLJRvl74l0076"
-    },
-    {
-        "domain": ".youtube.com",
-        "expirationDate": 1740545201.37285,
-        "hostOnly": false,
-        "httpOnly": true,
-        "name": "GPS",
-        "path": "/",
-        "sameSite": null,
-        "secure": true,
-        "session": false,
-        "storeId": null,
-        "value": "1"
-    },
-    {
-        "domain": ".youtube.com",
-        "expirationDate": 1772080365.812403,
-        "hostOnly": false,
-        "httpOnly": false,
-        "name": "SIDCC",
-        "path": "/",
-        "sameSite": null,
-        "secure": false,
-        "session": false,
-        "storeId": null,
-        "value": "AKEyXzXjjqjGRwe__fkHoXOQ_Tx8e3Hcu3UeEHxaCCA35jh6rVS3RGTnWSVZQ_VOuQDvdGB7StYC"
-    },
-    {
-        "domain": ".youtube.com",
-        "expirationDate": 1775104068.925973,
-        "hostOnly": false,
-        "httpOnly": false,
-        "name": "SID",
-        "path": "/",
-        "sameSite": null,
-        "secure": false,
-        "session": false,
-        "storeId": null,
-        "value": "g.a000uAgN5o8deURjLzo9TKbufOfmSx5gTkZmqS6jKNWUMcXzQz4AhZzhW3M2671M91c2IFngkAACgYKAXQSARMSFQHGX2Mif8DEA5Ac_6JJNXlhOpyvnhoVAUF8yKosAF8CZnCHn66amyTVr9Ta0076"
-    },
-    {
-        "domain": ".youtube.com",
-        "expirationDate": 1772080359.108042,
-        "hostOnly": false,
-        "httpOnly": true,
-        "name": "__Secure-1PSIDTS",
-        "path": "/",
-        "sameSite": null,
-        "secure": true,
-        "session": false,
-        "storeId": null,
-        "value": "sidts-CjIBEJ3XV6K0AbVLXysInvXjK1n4xg0Tefz_pNSjqB0QFGjyp4KQz1ISCXosh40-afnanxAA"
-    },
-    {
-        "domain": ".youtube.com",
-        "expirationDate": 1775104068.925576,
-        "hostOnly": false,
-        "httpOnly": false,
-        "name": "SAPISID",
-        "path": "/",
-        "sameSite": null,
-        "secure": true,
-        "session": false,
-        "storeId": null,
-        "value": "G3e5grG3wvbl4S-K/AKZ_2MFuP--kyidDg"
-    },
-    {
-        "domain": ".youtube.com",
-        "expirationDate": 1772080365.81267,
-        "hostOnly": false,
-        "httpOnly": true,
-        "name": "__Secure-1PSIDCC",
-        "path": "/",
-        "sameSite": null,
-        "secure": true,
-        "session": false,
-        "storeId": null,
-        "value": "AKEyXzXjFIVdXM-A-_MRobrkmCwTuxMVgHloQ39tjysJgca2XMxN2LcvtEGJmSqBVvn9JAS-lDVr"
-    },
-    {
-        "domain": ".youtube.com",
-        "expirationDate": 1775104068.92542,
-        "hostOnly": false,
-        "httpOnly": true,
-        "name": "SSID",
-        "path": "/",
-        "sameSite": null,
-        "secure": true,
-        "session": false,
-        "storeId": null,
-        "value": "AMlbvJeHAUpKGNis3"
-    },
-    {
-        "domain": ".youtube.com",
-        "expirationDate": 1775104068.925645,
-        "hostOnly": false,
-        "httpOnly": false,
-        "name": "__Secure-1PAPISID",
-        "path": "/",
-        "sameSite": null,
-        "secure": true,
-        "session": false,
-        "storeId": null,
-        "value": "G3e5grG3wvbl4S-K/AKZ_2MFuP--kyidDg"
-    },
-    {
-        "domain": ".youtube.com",
-        "expirationDate": 1775104068.926036,
-        "hostOnly": false,
-        "httpOnly": true,
-        "name": "__Secure-1PSID",
-        "path": "/",
-        "sameSite": null,
-        "secure": true,
-        "session": false,
-        "storeId": null,
-        "value": "g.a000uAgN5o8deURjLzo9TKbufOfmSx5gTkZmqS6jKNWUMcXzQz4Ad4auk87sWkMio45L5_RVxQACgYKAQcSARMSFQHGX2MiqRcQ035X3m9xUdNarpi65RoVAUF8yKqNe_ohv6S6T3oDYmQOlv-10076"
-    },
-    {
-        "domain": ".youtube.com",
-        "expirationDate": 1775104068.925714,
-        "hostOnly": false,
-        "httpOnly": false,
-        "name": "__Secure-3PAPISID",
-        "path": "/",
-        "sameSite": "no_restriction",
-        "secure": true,
-        "session": false,
-        "storeId": null,
-        "value": "G3e5grG3wvbl4S-K/AKZ_2MFuP--kyidDg"
-    },
-    {
-        "domain": ".youtube.com",
-        "expirationDate": 1772080365.812798,
-        "hostOnly": false,
-        "httpOnly": true,
-        "name": "__Secure-3PSIDCC",
-        "path": "/",
-        "sameSite": "no_restriction",
-        "secure": true,
-        "session": false,
-        "storeId": null,
-        "value": "AKEyXzXTM307flscL-2NxNsBx_yEoY9iI0ooG82EnIULWHc8sMo1p3uqsU_Cazm6pv-IL9rFUHsV"
-    },
-    {
-        "domain": ".youtube.com",
-        "expirationDate": 1772080359.108275,
-        "hostOnly": false,
-        "httpOnly": true,
-        "name": "__Secure-3PSIDTS",
-        "path": "/",
-        "sameSite": "no_restriction",
-        "secure": true,
-        "session": false,
-        "storeId": null,
-        "value": "sidts-CjIBEJ3XV6K0AbVLXysInvXjK1n4xg0Tefz_pNSjqB0QFGjyp4KQz1ISCXosh40-afnanxAA"
-    },
-    {
-        "domain": ".youtube.com",
-        "expirationDate": 1775104068.925502,
-        "hostOnly": false,
-        "httpOnly": false,
-        "name": "APISID",
-        "path": "/",
-        "sameSite": null,
-        "secure": false,
-        "session": false,
-        "storeId": null,
-        "value": "vSCHWECL2ApgekmI/Ablh3n-zeyqPs1PD8"
-    },
-    {
-        "domain": ".youtube.com",
-        "expirationDate": 1775104068.925262,
-        "hostOnly": false,
-        "httpOnly": true,
-        "name": "HSID",
-        "path": "/",
-        "sameSite": null,
-        "secure": false,
-        "session": false,
-        "storeId": null,
-        "value": "AVWek5-9qo7BhO2Yz"
-    },
-    {
-        "domain": ".youtube.com",
-        "expirationDate": 1775103402.336833,
-        "hostOnly": false,
-        "httpOnly": true,
-        "name": "LOGIN_INFO",
-        "path": "/",
-        "sameSite": "no_restriction",
-        "secure": true,
-        "session": false,
-        "storeId": null,
-        "value": "AFmmF2swRQIgRGDAfKW9Oa5K0uV_fN0R42yKVVDte0iSaGtpgnvAC_ECIQCxYRxIKQsJu6ov6nV-c3rqitoRsnh0YT51elULB3L0Cg:QUQ3MjNmd0VScV9qU2V3cnBkODV2VDdHUFg3V1J0NW04Wm11dkVwVzhPcG00ZXdvTTJYMFNSTl9TVlF4V0RjTGN3TjhKT2pRbklnbnZHemlLZ3JXM3p6WkdpQlVubURoX2xTTTN4eC14Ulp1MmRCWXp2dU1mTmlkVV9ReEJkdE9sYXhKbkRHZDNOc1JOVUEtTTJFRU44d1dsellHOFRMcFRB"
-    },
-    {
-        "domain": ".youtube.com",
-        "expirationDate": 1761581420.965587,
-        "hostOnly": false,
-        "httpOnly": false,
-        "name": "PREF",
-        "path": "/",
-        "sameSite": null,
-        "secure": true,
-        "session": false,
-        "storeId": null,
-        "value": "f6=80&f7=4100&tz=America.Sao_Paulo&f5=20000"
-    }
-]
+# Netscape HTTP Cookie File
+# http://curl.haxx.se/rfc/cookie_spec.html
+# This is a generated file!  Do not edit.
+
+.youtube.com	TRUE	/	FALSE	1775104069	HSID	AVWek5-9qo7BhO2Yz
+.youtube.com	TRUE	/	TRUE	1775104069	SSID	AMlbvJeHAUpKGNis3
+.youtube.com	TRUE	/	FALSE	1775104069	APISID	vSCHWECL2ApgekmI/Ablh3n-zeyqPs1PD8
+.youtube.com	TRUE	/	TRUE	1775104069	SAPISID	G3e5grG3wvbl4S-K/AKZ_2MFuP--kyidDg
+.youtube.com	TRUE	/	TRUE	1775104069	__Secure-1PAPISID	G3e5grG3wvbl4S-K/AKZ_2MFuP--kyidDg
+.youtube.com	TRUE	/	TRUE	1775104069	__Secure-3PAPISID	G3e5grG3wvbl4S-K/AKZ_2MFuP--kyidDg
+.youtube.com	TRUE	/	FALSE	1775104069	SID	g.a000uAgN5o8deURjLzo9TKbufOfmSx5gTkZmqS6jKNWUMcXzQz4AhZzhW3M2671M91c2IFngkAACgYKAXQSARMSFQHGX2Mif8DEA5Ac_6JJNXlhOpyvnhoVAUF8yKosAF8CZnCHn66amyTVr9Ta0076
+.youtube.com	TRUE	/	TRUE	1775104069	__Secure-1PSID	g.a000uAgN5o8deURjLzo9TKbufOfmSx5gTkZmqS6jKNWUMcXzQz4Ad4auk87sWkMio45L5_RVxQACgYKAQcSARMSFQHGX2MiqRcQ035X3m9xUdNarpi65RoVAUF8yKqNe_ohv6S6T3oDYmQOlv-10076
+.youtube.com	TRUE	/	TRUE	1775104069	__Secure-3PSID	g.a000uAgN5o8deURjLzo9TKbufOfmSx5gTkZmqS6jKNWUMcXzQz4ARO9V2ZMWoHaq8AiiEdX1xAACgYKAcoSARMSFQHGX2MiY3NF_-6lTGfV3PiTbVhYtxoVAUF8yKq9EVf4zu3YVpXMLJRvl74l0076
+.youtube.com	TRUE	/	TRUE	1740728563	CONSISTENCY	AKreu9spXMsc_MHO2qaqRejl5sk3sU1Zvu_b_qX8Jf4UMjls1By-3uLKIj5EjLPHO49eBCYicHidOIGZFoMrcgh3biHHQQwqR5ZEr0js6BYj8PvuDoW11Gs6dg6UcwkjG1bFvYRYLL1L5dwFiTTSf0LQ
+.youtube.com	TRUE	/	TRUE	1775287968	LOGIN_INFO	AFmmF2swRQIhAI76TC-mDNN0ObjzBRabELnbcXeXxrV9ciTZRtcnQ-XYAiBZwSSwlDb9xRhOK5-4ewNhCVog3m6lUxdlYqDmqLUx6g:QUQ3MjNmd205WUdONzNSQ01ybFIzNjJ2cmZGcGpicFVXLUllVkFJN0puU0prUkxqVU1MRmZMVFZBSGdOU1RPMVF0dzB3aEFuX1NJMnBMdTA3VGl0Vmp2YXNQNFNOajA5YWF6RlRLU01lU1B2WUNwR3VDVXhQUE03M0tRcmZXTWQydGhPTjZwSzlKbl9NWUwtSU94RmwyZkdpQmFUQ3VTTFZB
+.youtube.com	TRUE	/	TRUE	1775287971	PREF	f7=4100&tz=America.Sao_Paulo&f5=20000
+.youtube.com	TRUE	/	TRUE	1772264325	__Secure-1PSIDTS	sidts-CjIBEJ3XV_Iis_YEYLsoz3gDSsmmKezIszxVEMyhy_m1q72nG39Vp-_ucK6bH1aIaGKuvhAA
+.youtube.com	TRUE	/	TRUE	1772264325	__Secure-3PSIDTS	sidts-CjIBEJ3XV_Iis_YEYLsoz3gDSsmmKezIszxVEMyhy_m1q72nG39Vp-_ucK6bH1aIaGKuvhAA
+.youtube.com	TRUE	/	FALSE	1772264384	SIDCC	AKEyXzUFM-ZBshsAXvfdDrcvq4BpOzcfa-IRE0ZZiaD87usM8Bzh4ggGHD0Bfzc1pBN1bgdWK-NJ
+.youtube.com	TRUE	/	TRUE	1772264384	__Secure-1PSIDCC	AKEyXzX_Hxs8XQKVhLQsCUBuZiZF02btVEH3N6eehE37cv61QgCeYDb0sPref27M8CLAavWAia-J
+.youtube.com	TRUE	/	TRUE	1772264384	__Secure-3PSIDCC	AKEyXzW1_l_7O3n40SZIq01DYCgQgmDLlUeEj0Scp3ygfp2FUirW3kp-hg57NUmogENv3Bb7FFzc
+.youtube.com	TRUE	/	TRUE	1756279974	VISITOR_PRIVACY_METADATA	CgJCUhIEGgAgaw%3D%3D
+.youtube.com	TRUE	/	TRUE	1756279974	VISITOR_INFO1_LIVE	zIt381c4EEg
+.youtube.com	TRUE	/	TRUE	0	YSC	FBbRqq_I0kY
+.youtube.com	TRUE	/	TRUE	1756279715	__Secure-ROLLOUT_TOKEN	CJT4mqnF79zXmQEQq8igiM3migMYoKGHiezliwM%3D
